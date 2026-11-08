@@ -266,12 +266,15 @@ export function getDdearModule(id: number): any {
 
 export function getClientUser(): { name: string; email: string } | null {
   if (typeof document === 'undefined') {
-    return { name: 'Dear', email: 'dear@inkwell.local' };
+    return { name: 'Inkwell', email: 'atelier@inkwell.local' };
   }
   const isSignedOut = document.cookie
     .split('; ')
-    .some((c) => c.trim() === 'dear_auth=0');
-  return isSignedOut ? null : { name: 'Dear', email: 'dear@inkwell.local' };
+    .some((c) => {
+      const trimmed = c.trim();
+      return trimmed === 'inkwell_auth=0' || trimmed === 'dear_auth=0';
+    });
+  return isSignedOut ? null : { name: 'Inkwell', email: 'atelier@inkwell.local' };
 }
 
 export const Landing: React.ComponentType<{

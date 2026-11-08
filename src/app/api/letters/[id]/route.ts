@@ -11,9 +11,10 @@ export async function GET(
   if (!rec || rec.hidden) {
     return NextResponse.json({ error: 'not_found' }, { status: 404 });
   }
-  const isUnlocked =
-    !rec.password ||
-    isUnlockTokenValid(id, rec.password, req.cookies.get(`dear_unlock_${id}`)?.value);
+  const unlockToken =
+    req.cookies.get(`inkwell_unlock_${id}`)?.value ??
+    req.cookies.get(`dear_unlock_${id}`)?.value;
+  const isUnlocked = !rec.password || isUnlockTokenValid(id, rec.password, unlockToken);
   if (!isUnlocked) {
     return NextResponse.json({ id: rec.id, passwordRequired: true });
   }

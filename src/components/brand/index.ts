@@ -20,3 +20,4 @@ export {
   INKWELL_TITLE_WIDTH,
   INKWELL_TITLE_HEIGHT,
 } from './wordmark-paths';
+

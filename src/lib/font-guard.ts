@@ -129,3 +129,4 @@ export function trackCanvasTexture<T extends { needsUpdate: boolean }>(texture: 
     trackedTextures.delete(ref);
   };
 }
+

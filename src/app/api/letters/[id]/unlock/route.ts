@@ -39,12 +39,15 @@ export async function POST(
 
   clearFailedAttempts(attemptKey);
   const res = NextResponse.json({ ok: true });
-  res.cookies.set(`dear_unlock_${id}`, createUnlockToken(id, rec.password), {
+  const token = createUnlockToken(id, rec.password);
+  const cookieOptions = {
     path: '/',
     httpOnly: true,
-    sameSite: 'lax',
+    sameSite: 'lax' as const,
     secure: isProduction,
     maxAge: 60 * 60 * 24 * 7,
-  });
+  };
+  res.cookies.set(`inkwell_unlock_${id}`, token, cookieOptions);
+  res.cookies.set(`dear_unlock_${id}`, token, cookieOptions);
   return res;
 }

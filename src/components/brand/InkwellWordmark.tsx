@@ -78,3 +78,4 @@ export const InkwellWordmark: React.FC<InkwellWordmarkProps> = ({
 };
 
 export default InkwellWordmark;
+

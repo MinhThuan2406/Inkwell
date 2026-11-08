@@ -3,7 +3,8 @@ import type { NextRequest, NextResponse } from 'next/server';
 
 const ID_PATTERN = /^[A-Za-z0-9_-]{1,64}$/;
 const ID_ALPHABET = 'abcdefghijklmnopqrstuvwxyz0123456789';
-const OWNER_COOKIE = 'dear_owner';
+const PRIMARY_OWNER_COOKIE = 'inkwell_owner';
+const LEGACY_OWNER_COOKIE = 'dear_owner';
 const OWNER_PATTERN = /^[A-Za-z0-9_-]{16,64}$/;
 const MAX_BODY_BYTES = 1_000_000;
 const ATTEMPT_LIMIT = 5;
@@ -15,6 +16,7 @@ export const isProduction = process.env.NODE_ENV === 'production';
 interface Owner {
   id: string;
   isNew: boolean;
+  shouldMigrate?: boolean;
 }
 
 const failedAttempts = new Map<string, { count: number; resetAt: number }>();
@@ -97,31 +99,43 @@ export function clearFailedAttempts(key: string): void {
 }
 
 export function resolveOwner(req: NextRequest): Owner {
-  const existing = req.cookies.get(OWNER_COOKIE)?.value;
-  if (existing && OWNER_PATTERN.test(existing)) return { id: existing, isNew: false };
+  const inkwellOwner = req.cookies.get(PRIMARY_OWNER_COOKIE)?.value;
+  if (inkwellOwner && OWNER_PATTERN.test(inkwellOwner)) {
+    return { id: inkwellOwner, isNew: false };
+  }
+
+  const legacyOwner = req.cookies.get(LEGACY_OWNER_COOKIE)?.value;
+  if (legacyOwner && OWNER_PATTERN.test(legacyOwner)) {
+    return { id: legacyOwner, isNew: false, shouldMigrate: true };
+  }
+
   return { id: randomBytes(24).toString('base64url'), isNew: true };
 }
 
 export function attachOwner(res: NextResponse, owner: Owner): NextResponse {
-  if (owner.isNew) {
-    res.cookies.set(OWNER_COOKIE, owner.id, {
+  if (owner.isNew || owner.shouldMigrate) {
+    const cookieOptions = {
       path: '/',
       httpOnly: true,
-      sameSite: 'lax',
+      sameSite: 'lax' as const,
       secure: isProduction,
       maxAge: 60 * 60 * 24 * 365,
-    });
+    };
+    res.cookies.set(PRIMARY_OWNER_COOKIE, owner.id, cookieOptions);
+    res.cookies.set(LEGACY_OWNER_COOKIE, owner.id, cookieOptions);
   }
   return res;
 }
 
 export function setAuthCookie(res: NextResponse, value: '0' | '1'): NextResponse {
-  res.cookies.set('dear_auth', value, {
+  const cookieOptions = {
     path: '/',
     httpOnly: false,
-    sameSite: 'lax',
+    sameSite: 'lax' as const,
     secure: isProduction,
     maxAge: 60 * 60 * 24 * 30,
-  });
+  };
+  res.cookies.set('inkwell_auth', value, cookieOptions);
+  res.cookies.set('dear_auth', value, cookieOptions);
   return res;
 }

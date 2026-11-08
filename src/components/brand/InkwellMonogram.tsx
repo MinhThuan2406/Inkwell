@@ -80,3 +80,4 @@ export const InkwellMonogram: React.FC<InkwellMonogramProps> = ({
 };
 
 export default InkwellMonogram;
+

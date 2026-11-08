@@ -98,15 +98,15 @@
 ## V. Lộ trình Triển khai Chi tiết (4 Tuần)
 
 ### 📌 Tuần 1: Nền tảng Nhận diện, 3D Texture & Lớp Bảo vệ Tương thích
-- [ ] **1.1. Monogram Vector & Favicon**: Tạo `src/components/brand/InkwellMonogram.tsx` và cập nhật `src/app/icon.svg` với con dấu chữ I intaglio.
-- [ ] **1.2. Brand Wordmark**: Xây dựng component `src/components/brand/InkwellWordmark.tsx`.
-- [ ] **1.3. Patch chuỗi 3D tem thư**: Patch `"DEAR · POST"` $\rightarrow$ `"INKWELL · ATELIER"` trong `src/lib/ddear-bundle.js`.
-- [ ] **1.4. Intercept hàm vẽ con dấu 3D**: Cập nhật `src/lib/ddear-runtime.ts` để nạp hàm vẽ Monogram chữ I intaglio lên CanvasTexture của Three.js.
-- [ ] **1.5. Font Guard**: Xây dựng `src/lib/font-guard.ts` chống race condition khi nướng texture.
-- [ ] **1.6. Font Alias Layer**: Bổ sung ánh xạ alias trong `src/app/globals.css` bảo đảm thư cũ lưu `dear-*` không bị lỗi font.
-- [ ] **1.7. Cookie Migration**: Bổ sung cơ chế Dual-Read `inkwell_owner ?? dear_owner` trong `src/lib/server-security.ts`.
-- [ ] **1.8. Design Tokens**: Cập nhật hệ biến CSS `--wall`, `--ink`, `--dot`, `--accent` theo bảng màu Washi Parchment & Sumi Carbon.
-- [ ] **1.9. Kiểm tra**: Chạy `npm run typecheck`, kiểm tra link thư cũ hoạt động hoàn hảo.
+- [x] **1.1. Monogram Vector & Favicon**: Tạo `src/components/brand/InkwellMonogram.tsx` và cập nhật `src/app/icon.svg` với con dấu chữ I intaglio.
+- [x] **1.2. Brand Wordmark**: Xây dựng component `src/components/brand/InkwellWordmark.tsx`.
+- [x] **1.3. Patch chuỗi 3D tem thư**: Patch `"DEAR · POST"` $\rightarrow$ `"INKWELL · ATELIER"` trong `src/lib/ddear-bundle.js`.
+- [x] **1.4. Intercept hàm vẽ con dấu 3D**: Cập nhật `src/lib/ddear-runtime.ts` để nạp hàm vẽ Monogram chữ I intaglio lên CanvasTexture của Three.js.
+- [x] **1.5. Font Guard**: Xây dựng `src/lib/font-guard.ts` chống race condition khi nướng texture.
+- [x] **1.6. Font Alias Layer**: Bổ sung ánh xạ alias trong `src/app/globals.css` bảo đảm thư cũ lưu `dear-*` không bị lỗi font.
+- [x] **1.7. Cookie Migration**: Bổ sung cơ chế Dual-Read `inkwell_owner ?? dear_owner` trong `src/lib/server-security.ts`.
+- [x] **1.8. Design Tokens**: Cập nhật hệ biến CSS `--wall`, `--ink`, `--dot`, `--accent` theo bảng màu Washi Parchment & Sumi Carbon.
+- [x] **1.9. Kiểm tra**: Chạy `npm run typecheck`, kiểm tra link thư cũ hoạt động hoàn hảo.
 
 ### 📌 Tuần 2: Trang chủ Immersive Stage & Spatial Scrollytelling
 - [ ] **2.1. Refactor Shell Trang chủ**: Tách `src/app/page.tsx` thành Next.js App Router component độc lập.

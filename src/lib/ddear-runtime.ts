@@ -343,3 +343,64 @@ export function getThemesModule() {
 export function getSchemaModule() {
   return getDdearModule(33857);
 }
+
+export function createSampleDoc(themeId?: string, lang: string = 'vi') {
+  const themesMod = getThemesModule();
+  const schemaMod = getSchemaModule();
+  const themes = themesMod.z;
+  const theme = (themeId ? themes.find((t: any) => t.id === themeId) : null) ?? themes[1] ?? themes[0];
+  const baseDoc = schemaMod._();
+  const merged = themesMod.C(baseDoc, theme);
+  return {
+    ...merged,
+    text: theme.sample?.[lang] || theme.sample?.vi || '',
+    from: 'Inkwell',
+    to: lang === 'vi' ? 'Gửi bạn' : 'For you',
+    speed: 1.8,
+  };
+}
+
+export function getThemeList(): any[] {
+  return getThemesModule().z;
+}
+
+export const Stage3D: React.ComponentType<{
+  doc: any;
+  mode?: string;
+  locked?: boolean;
+  date?: string;
+  postmark?: string;
+  [key: string]: any;
+}> = (props) => {
+  const Mod = getDdearModule(56971).p;
+  return React.createElement(Mod, props);
+};
+
+export const ToastNotice: React.ComponentType<{
+  code?: string | null;
+}> = (props) => {
+  const Mod = getDdearModule(56971).m;
+  return React.createElement(Mod, props);
+};
+
+export const UserMenu: React.ComponentType<{
+  user?: any;
+  enabled?: boolean;
+  next?: string;
+  onSignIn?: () => void;
+}> = (props) => {
+  const Mod = getDdearModule(15424).P;
+  return React.createElement(Mod, props);
+};
+
+export function useSceneStore<T>(selector: (state: any) => T): T {
+  return getDdearModule(33168).K(selector);
+}
+
+export function formatDate(date: Date, lang: string): string {
+  return getDdearModule(56971).H(date, lang);
+}
+
+export function formatPostmark(date: Date): string {
+  return getDdearModule(56971).D(date);
+}

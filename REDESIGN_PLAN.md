@@ -109,11 +109,11 @@
 - [x] **1.9. Kiểm tra**: Chạy `npm run typecheck`, kiểm tra link thư cũ hoạt động hoàn hảo.
 
 ### 📌 Tuần 2: Trang chủ Immersive Stage & Spatial Scrollytelling
-- [ ] **2.1. Refactor Shell Trang chủ**: Tách `src/app/page.tsx` thành Next.js App Router component độc lập.
-- [ ] **2.2. Header tinh gọn**: Wordmark Inkwell mới, bộ chuyển ngôn ngữ tối giản, nút Hộp thư của tôi.
-- [ ] **2.3. Sân khấu 3D tĩnh lặng**: Đặt phong bì 3D ở trung tâm mặt bàn gỗ với ánh sáng đèn hắt ấm.
-- [ ] **2.4. Scrollytelling Camera**: Thiết lập tương tác cuộn chuyển góc camera 3D ngắm chi tiết giấy/sáp/ngăn kéo mẫu.
-- [ ] **2.5. Touch & Viewport Guard**: Áp dụng `touch-action: pan-y` và khóa resize theo chiều ngang chống giật trên iOS Safari.
+- [x] **2.1. Refactor Shell Trang chủ**: Tách `src/app/page.tsx` thành Next.js App Router component độc lập.
+- [x] **2.2. Header tinh gọn**: Wordmark Inkwell mới, bộ chuyển ngôn ngữ tối giản, nút Hộp thư của tôi.
+- [x] **2.3. Sân khấu 3D tĩnh lặng**: Đặt phong bì 3D ở trung tâm mặt bàn gỗ với ánh sáng đèn hắt ấm.
+- [x] **2.4. Scrollytelling Camera**: Thiết lập tương tác cuộn chuyển góc camera 3D ngắm chi tiết giấy/sáp/ngăn kéo mẫu.
+- [x] **2.5. Touch & Viewport Guard**: Áp dụng `touch-action: pan-y` và khóa resize theo chiều ngang chống giật trên iOS Safari.
 
 ### 📌 Tuần 3: Atelier Studio Tự Do (Non-linear Writing Desk)
 - [ ] **3.1. Tái cấu trúc Bố cục Studio `/create`**: Tách rời layout 3 cột cũ, đưa tờ giấy viết và ngòi bút vào vị trí trung tâm cố định.

@@ -2,7 +2,8 @@
 
 import React, { Suspense, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { getClientUser, Landing } from '@/lib/ddear-runtime';
+import { getClientUser } from '@/lib/ddear-runtime';
+import { LandingAtelier } from '@/components/landing';
 import PageLoader from '@/components/PageLoader';
 
 function HomeContent() {
@@ -14,7 +15,7 @@ function HomeContent() {
     setUser(getClientUser());
   }, [notice]);
 
-  return <Landing user={user} enabled={true} notice={notice} />;
+  return <LandingAtelier user={user} enabled={true} notice={notice} />;
 }
 
 export default function HomePage() {

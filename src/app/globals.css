@@ -212,3 +212,18 @@ p, .placard p, .inspector-head p, .letter-card .excerpt, .share-side p, .letter-
     display: none;
   }
 }
+
+.landing-placard {
+  max-width: min(340px, calc(100vw - 32px));
+  padding: 18px 22px;
+}
+
+@media (max-height: 600px) {
+  .landing .placard {
+    bottom: 16px;
+    left: clamp(16px, 3vw, 32px);
+    padding: 14px 18px;
+    max-width: 300px;
+  }
+}
+

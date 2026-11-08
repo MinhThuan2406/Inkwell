@@ -11,6 +11,7 @@ import { Environment, Lightformer, PerformanceMonitor } from '@react-three/drei'
 import gsap from 'gsap';
 import * as THREE from 'three';
 import { DDEAR_FACTORIES } from './ddear-bundle';
+import { InkwellWordmark } from '@/components/brand';
 
 if (typeof globalThis.matchMedia === 'undefined') {
   (globalThis as any).matchMedia = (query: string) => ({
@@ -220,6 +221,7 @@ export function getDdearModule(id: number): any {
               value: val,
               enumerable: true,
               configurable: true,
+              writable: true,
             });
             idx += 3;
           } else {
@@ -235,6 +237,17 @@ export function getDdearModule(id: number): any {
       },
     };
     entry.fn(ctx);
+    if (entry.ids.includes(96604)) {
+      const mod96604 = moduleCache.get(96604);
+      if (mod96604) {
+        Object.defineProperty(mod96604, 'B', {
+          value: InkwellWordmark,
+          enumerable: true,
+          configurable: true,
+          writable: true,
+        });
+      }
+    }
   }
   return moduleCache.get(id);
 }
@@ -297,10 +310,7 @@ export const MyLetters: React.ComponentType<{
   return React.createElement(Mod, props);
 };
 
-export const BrandWordmark: React.ComponentType = () => {
-  const Mod = getDdearModule(96604).B;
-  return React.createElement(Mod);
-};
+export const BrandWordmark: React.ComponentType = InkwellWordmark;
 
 export const LanguageSwitch: React.ComponentType = () => {
   const Mod = getDdearModule(215).f;

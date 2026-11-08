@@ -12,6 +12,11 @@ import gsap from 'gsap';
 import * as THREE from 'three';
 import { DDEAR_FACTORIES } from './ddear-bundle';
 import { InkwellWordmark } from '@/components/brand';
+import { ensureFontsReady, trackCanvasTexture } from './font-guard';
+
+if (typeof window !== 'undefined') {
+  void ensureFontsReady();
+}
 
 if (typeof globalThis.matchMedia === 'undefined') {
   (globalThis as any).matchMedia = (query: string) => ({
@@ -29,6 +34,13 @@ if (typeof (globalThis as any).devicePixelRatio === 'undefined') {
   (globalThis as any).devicePixelRatio = 1;
 }
 
+class GuardedCanvasTexture extends THREE.CanvasTexture {
+  constructor(...args: ConstructorParameters<typeof THREE.CanvasTexture>) {
+    super(...args);
+    trackCanvasTexture(this);
+  }
+}
+
 const THREE_90072: Record<string, any> = {
   CQ: THREE.PlaneGeometry,
   DT: THREE.DynamicDrawUsage,
@@ -40,7 +52,7 @@ const THREE_90072: Record<string, any> = {
   Ik: THREE.NoColorSpace,
   Jy: THREE.ExtrudeGeometry,
   L0: THREE.Sphere,
-  Nk: THREE.CanvasTexture,
+  Nk: GuardedCanvasTexture,
   Ow: THREE.Shape,
   Ox: THREE.MeshPhysicalMaterial,
   Sk: THREE.Texture,

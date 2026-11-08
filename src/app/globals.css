@@ -146,3 +146,69 @@ p, .placard p, .inspector-head p, .letter-card .excerpt, .share-side p, .letter-
 .open-date time {
   font-variant-numeric: tabular-nums;
 }
+
+/* --- Week 3: Atelier Studio Non-Linear Desk Refinements --- */
+.inspector-head .step {
+  display: none;
+}
+
+.studio-bar {
+  background: var(--card);
+  border-bottom: 1px solid var(--rule);
+}
+
+.rail-item {
+  border-radius: var(--r-sm);
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.rail-item:hover {
+  background: var(--well);
+  color: var(--ink);
+}
+
+.rail-item[aria-current="step"] {
+  background: var(--ink);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(17, 19, 23, 0.15);
+}
+
+.rail-item[aria-current="step"]:after {
+  background: var(--dot);
+  box-shadow: 0 0 0 2px var(--card);
+}
+
+.area {
+  background: var(--card);
+  color: var(--ink);
+  border-color: var(--rule);
+  border-radius: var(--r-sm);
+  text-wrap: pretty;
+  letter-spacing: -0.01em;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.area:focus {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgba(17, 19, 23, 0.08);
+}
+
+.field output,
+.save-chip,
+.caption-count,
+.mini-range output,
+.photo-count > span {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 900px) {
+  .rail {
+    background: var(--card);
+    border-bottom: 1px solid var(--rule);
+    scrollbar-width: none;
+  }
+  .rail::-webkit-scrollbar {
+    display: none;
+  }
+}

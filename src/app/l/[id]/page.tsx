@@ -62,7 +62,7 @@ export default function LetterViewerPage() {
     const doc = {
       ...themesMod.C(schemaMod._(), matchedPreset),
       text: matchedPreset.sample.vi,
-      from: 'Dear',
+      from: 'Inkwell',
       to: 'Gửi bạn',
     };
     setState({
@@ -82,8 +82,10 @@ export default function LetterViewerPage() {
   useEffect(() => {
     load();
     const onRefresh = () => load();
+    window.addEventListener('inkwell:refresh', onRefresh);
     window.addEventListener('dear:refresh', onRefresh);
     return () => {
+      window.removeEventListener('inkwell:refresh', onRefresh);
       window.removeEventListener('dear:refresh', onRefresh);
     };
   }, [load]);

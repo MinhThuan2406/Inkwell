@@ -27,8 +27,10 @@ function MyLettersContent() {
   useEffect(() => {
     load();
     const onRefresh = () => load();
+    window.addEventListener('inkwell:refresh', onRefresh);
     window.addEventListener('dear:refresh', onRefresh);
     return () => {
+      window.removeEventListener('inkwell:refresh', onRefresh);
       window.removeEventListener('dear:refresh', onRefresh);
     };
   }, [load]);

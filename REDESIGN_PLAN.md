@@ -116,15 +116,15 @@
 - [x] **2.5. Touch & Viewport Guard**: Áp dụng `touch-action: pan-y` và khóa resize theo chiều ngang chống giật trên iOS Safari.
 
 ### 📌 Tuần 3: Atelier Studio Tự Do (Non-linear Writing Desk)
-- [ ] **3.1. Tái cấu trúc Bố cục Studio `/create`**: Tách rời layout 3 cột cũ, đưa tờ giấy viết và ngòi bút vào vị trí trung tâm cố định.
-- [ ] **3.2. Khay dụng cụ dạng ngăn kéo (Stationery Drawer/Tabs)**: Thiết kế các tab công cụ (Giấy, Nét bút, Sáp niêm, Âm thanh, Mật mã) không ép tuần tự.
-- [ ] **3.3. Tối ưu tương tác chữ viết**: Bổ sung bộ đếm ký tự `tabular-nums`, cải thiện độ tương phản và cảm giác gõ phím.
-- [ ] **3.4. Responsive Mobile Drawer**: Dựng khay công cụ trượt từ dưới lên trên màn hình điện thoại mượt mà không che khuất trang giấy.
+- [x] **3.1. Tái cấu trúc Bố cục Studio `/create`**: Tách rời layout 3 cột cũ, đưa tờ giấy viết và ngòi bút vào vị trí trung tâm cố định.
+- [x] **3.2. Khay dụng cụ dạng ngăn kéo (Stationery Drawer/Tabs)**: Thiết kế các tab công cụ (Giấy, Nét bút, Sáp niêm, Âm thanh, Mật mã) không ép tuần tự, loại bỏ số bước tuần tự gượng gạo.
+- [x] **3.3. Tối ưu tương tác chữ viết**: Bổ sung bộ đếm ký tự `tabular-nums`, cải thiện độ tương phản và cảm giác gõ phím.
+- [x] **3.4. Responsive Mobile Drawer**: Dựng khay công cụ trượt từ dưới lên trên màn hình điện thoại mượt mà không che khuất trang giấy.
 
 ### 📌 Tuần 4: Trình Đọc Thư, Hộp Thư Cá Nhân & Tối Ưu Safari/Mobile 60fps
-- [ ] **4.1. Trình đọc thư `/l/[id]`**: Nâng cấp nghi thức mở thư (Unsealing ritual), hiệu ứng bẻ sáp chữ I giòn tan, chế độ đọc toàn màn hình chuẩn WCAG AA.
-- [ ] **4.2. Hộp thư cá nhân `/letters`**: Chuyển đổi sang giao diện Ngăn kéo bưu thiếp lưu trữ bản nháp và thư đã niêm phong.
-- [ ] **4.3. Audit WebGL 60fps & Safari iOS**: Kiểm tra toàn diện hiệu năng khung hình trên thiết bị di động, loại bỏ mọi rò rỉ bộ nhớ texture.
-- [ ] **4.4. Nghiệm thu 20 nguyên tắc Anti-AI-Slop**: Đảm bảo 100% tuân thủ tiêu chuẩn chất lượng của `AGENTS.md`.
-- [ ] **4.5. Final Typecheck & Build**: Xác nhận `npm run build` và `npm run typecheck` đạt 0 lỗi, sẵn sàng triển khai.
+- [x] **4.1. Trình đọc thư `/l/[id]`**: Nâng cấp nghi thức mở thư (Unsealing ritual), hiệu ứng bẻ sáp chữ I giòn tan, chế độ đọc toàn màn hình chuẩn WCAG AA.
+- [x] **4.2. Hộp thư cá nhân `/letters`**: Chuyển đổi sang giao diện Ngăn kéo bưu thiếp lưu trữ bản nháp và thư đã niêm phong.
+- [x] **4.3. Audit WebGL 60fps & Safari iOS**: Kiểm tra toàn diện hiệu năng khung hình trên thiết bị di động, loại bỏ mọi rò rỉ bộ nhớ texture và chống giật address bar.
+- [x] **4.4. Nghiệm thu 20 nguyên tắc Anti-AI-Slop**: Đảm bảo 100% tuân thủ tiêu chuẩn chất lượng của `AGENTS.md`.
+- [x] **4.5. Final Typecheck & Build**: Xác nhận `npm run build` và `npm run typecheck` đạt 0 lỗi, sẵn sàng triển khai.
 

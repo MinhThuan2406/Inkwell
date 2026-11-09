@@ -6,7 +6,12 @@ export const metadata: Metadata = {
   description:
     'Viết một lá thư 3D với phong bì, sáp niêm phong và nét chữ viết tay. Gửi người thương bằng một đường link.',
   icons: {
-    icon: '/icon.svg',
+    icon: [
+      { url: '/icon.svg?v=inkwell-2', type: 'image/svg+xml' },
+      { url: '/favicon.ico?v=inkwell-2', sizes: 'any' },
+    ],
+    shortcut: '/icon.svg?v=inkwell-2',
+    apple: '/apple-icon.png?v=inkwell-2',
   },
 };
 

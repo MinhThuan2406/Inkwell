@@ -1,48 +1,22 @@
 # Inkwell
 
-Ứng dụng viết thư tay 3D (Next.js 15, React 19, Three.js) và chia sẻ bằng một đường link.
+## Lời cảm ơn
 
-## Chạy dự án
+Inkwell không thể có hình hài như hôm nay nếu thiếu **[ddear.vercel.app](https://ddear.vercel.app/)** (Dear / Dear Post).
+Cảm ơn tác giả của Dear đã tạo ra một trải nghiệm gửi thư mà tôi chưa từng thấy ở nơi nào khác.
 
-```bash
-npm ci
-npm run dev
-npm run typecheck
-npm run build && npm start
-```
+### Điều tôi biết ơn
 
-Yêu cầu Node.js 20 trở lên.
+- **Một ý tưởng hiếm có.** Đưa lá thư tay, tờ giấy, nét chữ và nghi thức bóc con dấu sáp vào không gian web 3D, giữa thời đại tin nhắn tức thì.
+- **Sự tĩnh lặng.** Dear không vội vã, không ồn ào. Sự chậm rãi đó gợi cho tôi rằng gửi một lá thư vẫn có thể là một việc trang trọng.
+- **Cảm hứng để bắt đầu.** Tôi dựng Inkwell vì muốn tự tay thử lại cảm giác ấy, bằng cách hiểu và cách làm của riêng mình.
 
-## Lưu trữ dữ liệu
+### Về mối quan hệ giữa hai dự án
 
-- Thư và bản nháp được ghi vào `.data/letters.json`.
-- Ảnh và âm thanh tải lên được ghi vào `public/media/`.
-- Cả hai thư mục đều nằm trong `.gitignore`.
-- Cần ổ đĩa ghi được và bền vững (VPS, Docker volume). Nền tảng serverless có hệ thống file tạm thời sẽ làm mất dữ liệu.
-- File trong `public/media/` được thêm sau khi build có thể không được `next start` phục vụ. Kiểm tra trước khi triển khai.
+Inkwell là bản dựng độc lập, lấy cảm hứng từ ý tưởng và trải nghiệm của Dear. Dự án không sao chép mã nguồn hay tài nguyên của Dear.
+Mọi quyền đối với ý tưởng và tác phẩm gốc thuộc về tác giả của Dear.
 
-## Biến môi trường
+### Gửi tác giả Dear
 
-Dự án hiện không dùng biến môi trường nhạy cảm nào và hoạt động mặc định không cần cấu hình. Mẫu cấu hình an toàn được cung cấp tại `.env.example`. Không commit bất kỳ file `.env*` cục bộ nào vào Git.
-
-## Các biện pháp bảo mật trong mã nguồn
-
-- Mật khẩu thư được băm bằng scrypt, so sánh bằng `timingSafeEqual`, không bao giờ trả về qua API.
-- Cookie mở khóa thư là chữ ký HMAC gắn với từng thư, không thể tự tạo.
-- Giới hạn 5 lần nhập sai mỗi 15 phút theo cặp IP và thư. Bộ đếm nằm trong bộ nhớ tiến trình nên mất khi khởi động lại và không chia sẻ giữa nhiều instance.
-- Phân quyền sở hữu bản nháp (Owner Isolation): Chỉ người tạo (cookie `dear_owner`, httpOnly) mới có quyền chỉnh sửa (`PUT`) hoặc xóa (`DELETE`) bản nháp. Chống tình trạng chuyển quyền sở hữu trái phép bản nháp của người khác.
-- Danh sách thư và bản nháp chỉ trả về bản ghi thuộc trình duyệt tạo ra chúng; không lộ thông tin báo cáo vi phạm nội bộ (`reports`) ra API công khai.
-- Mã thư sinh bằng bộ sinh ngẫu nhiên mật mã học và được kiểm tra định dạng ở mọi route (`isValidId`).
-- Upload kiểm tra tên file theo mẫu cố định, giới hạn 8 MB, không ghi đè file có sẵn. Thư mục `/media` trả về `Content-Security-Policy` dạng sandbox.
-- Chống open redirect ở `/auth/login`.
-- Header bảo mật toàn site: `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`, `Strict-Transport-Security`.
-- CI tự động kiểm tra typecheck, build, quét file nhạy cảm/secrets và chạy `npm audit`. CodeQL và Dependabot chạy theo lịch.
-
-## Thiết lập thủ công trên GitHub
-
-Các mục sau nằm trong Settings của repository, không thể cấu hình bằng mã nguồn:
-
-1. Security > Code security: bật Dependency graph, Dependabot alerts, Secret scanning và Push protection.
-2. Branch protection cho `main`: yêu cầu pull request, yêu cầu check `CI` và `CodeQL` đạt, chặn force push và xóa nhánh.
-3. Settings > Actions > General: đặt quyền mặc định của `GITHUB_TOKEN` là Read repository contents.
-4. CodeQL trên repository private cần GitHub Advanced Security. Repository public dùng miễn phí.
+Tôi không tìm thấy thông tin liên hệ hay giấy phép công khai của dự án gốc, nên chưa thể ghi tên bạn ở đây.
+Nếu bạn là tác giả, xin liên hệ qua Issue hoặc Pull Request. Tôi sẽ ghi tên và liên kết của bạn ở vị trí đầu tiên của README này, hoặc điều chỉnh, gỡ bỏ bất kỳ phần nào theo mong muốn của bạn.

@@ -38,10 +38,9 @@ export const LandingStage: React.FC<LandingStageProps> = ({ doc, date, postmark 
         overflow: 'hidden',
       }}
     >
-      <Stage3D doc={doc} mode="demo" date={date} postmark={postmark} />
+      <Stage3D doc={doc} mode="viewer" date={date} postmark={postmark} />
     </div>
   );
 };
 
 export default LandingStage;
-

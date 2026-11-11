@@ -7,6 +7,7 @@
 
 export const ATELIER_FONTS = [
   // Primary Inkwell identifiers
+  'Archivo',
   'inkwell-dancing',
   'inkwell-greatvibes',
   'inkwell-playfair',

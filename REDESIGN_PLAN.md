@@ -8,12 +8,12 @@
 
 | Hạng mục | Vấn đề ban đầu | Giải pháp kỹ thuật thực thi | Trạng thái |
 | :--- | :--- | :--- | :---: |
-| **1. Kỹ thuật 3D** | Thay thế bề mặt cục bộ, kẹt trong bundle minified | Intercept Canvas Textures (Module 97871 & 21100), patch chuỗi tem thư, tiêm monogram sáp | ⏳ Chưa bắt đầu |
-| **2. Bố cục Trang chủ** | Web SaaS cuộn nhiều block (Hero, Feature, Pricing) làm mất tính ma mị | Immersive Stage + Spatial Desk Scrollytelling (bàn viết tĩnh lặng làm trung tâm) | ⏳ Chưa bắt đầu |
-| **3. Trải nghiệm Studio** | Wizard 6 bước tuyến tính (ép Next/Back ngắt mạch viết) | Atelier Desk tự do: Tờ giấy & nét bút luôn ở trung tâm, khay dụng cụ mở ở cạnh | ⏳ Chưa bắt đầu |
-| **4. Monogram con dấu 3D** | Nét mảnh & giọt mực rời dễ vỡ hình, răng cưa mobile | The Intaglio Serif "I": Khắc chìm trong gờ tròn dập nổi, bắt specular shadow sắc nét | ⏳ Chưa bắt đầu |
-| **5. Lộ trình thực hiện** | 10–12 ngày (quá lạc quan) | 3–4 tuần thực tế với các mốc kiểm thử WebGL/Safari iOS rõ ràng | ⏳ Chưa bắt đầu |
-| **6. Dữ liệu tương thích** | Đổi tên thẳng tay gây vỡ font thư cũ và mất phiên | Font Alias layer cho `dear-*` và Dual-Read Cookie (`inkwell_owner ?? dear_owner`) | ⏳ Chưa bắt đầu |
+| **1. Kỹ thuật 3D** | Thay thế bề mặt cục bộ, kẹt trong bundle minified | Intercept Canvas Textures (Module 97871 & 96604), patch chuỗi tem thư, tiêm monogram chữ I intaglio | ✅ Hoàn thành |
+| **2. Bố cục Trang chủ** | Web SaaS cuộn nhiều block (Hero, Feature, Pricing) làm mất tính ma mị | Immersive Stage + Spatial Desk Scrollytelling (bàn viết tĩnh lặng làm trung tâm, loại bỏ loop demo) | ✅ Hoàn thành |
+| **3. Trải nghiệm Studio** | Wizard 6 bước tuyến tính (ép Next/Back ngắt mạch viết) | Atelier Desk tự do: Tờ giấy & nét bút luôn ở trung tâm, khay dụng cụ mở ở cạnh, date picker dd/mm/yyyy | ✅ Hoàn thành |
+| **4. Monogram con dấu 3D** | Nét mảnh & giọt mực rời dễ vỡ hình, răng cưa mobile | The Intaglio Serif "I": Khắc chìm trong gờ tròn dập nổi, bắt specular shadow sắc nét, bộ favicon đa độ phân giải | ✅ Hoàn thành |
+| **5. Lộ trình thực hiện** | 10–12 ngày (quá lạc quan) | 3–4 tuần thực tế với các mốc kiểm thử WebGL/Safari iOS rõ ràng | ✅ Hoàn thành |
+| **6. Dữ liệu tương thích** | Đổi tên thẳng tay gây vỡ font thư cũ và mất phiên | Font Alias layer cho `dear-*` và Dual-Read Cookie (`inkwell_owner ?? dear_owner`) | ✅ Hoàn thành |
 
 ---
 

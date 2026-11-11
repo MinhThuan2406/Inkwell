@@ -6,6 +6,7 @@ import {
   getSchemaModule,
   getThemesModule,
   LetterUnlock,
+  useDdearTranslation,
   Viewer,
 } from '@/lib/ddear-runtime';
 import NotFoundPage from '@/app/not-found';
@@ -14,6 +15,8 @@ import PageLoader from '@/components/PageLoader';
 export default function LetterViewerPage() {
   const params = useParams<{ id: string }>();
   const id = params?.id || 'romantic';
+  const t = useDdearTranslation();
+  const lang = t.lang || 'vi';
   const [state, setState] = useState<{
     status: 'loading' | 'unlock' | 'ready' | 'not_found';
     letter?: any;
@@ -61,9 +64,9 @@ export default function LetterViewerPage() {
 
     const doc = {
       ...themesMod.C(schemaMod._(), matchedPreset),
-      text: matchedPreset.sample.vi,
+      text: matchedPreset.sample?.[lang] || matchedPreset.sample?.vi || '',
       from: 'Inkwell',
-      to: 'Gửi bạn',
+      to: lang === 'vi' ? 'Gửi bạn' : 'For you',
     };
     setState({
       status: 'ready',
@@ -77,7 +80,7 @@ export default function LetterViewerPage() {
         replyTo: null,
       },
     });
-  }, [id]);
+  }, [id, lang]);
 
   useEffect(() => {
     load();

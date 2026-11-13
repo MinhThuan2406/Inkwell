@@ -37,6 +37,5 @@ next-env.d.ts
 .vercel
 .env*
 
-# Local documentation & agent blueprints
 AGENTS.md
 REDESIGN_PLAN.md

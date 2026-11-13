@@ -2,9 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Inkwell | Thư viết tay gửi bằng một đường link',
+  title: 'Inkwell | Gói ghém thư tay vào một đường link',
   description:
-    'Viết một lá thư 3D với phong bì, sáp niêm phong và nét chữ viết tay. Gửi người thương bằng một đường link.',
+    'Góc thư tín trên không gian số. Nơi có giấy mộc ép cạnh, nét mực sumi lắng đọng và con dấu sáp khắc chìm — dành cho những lời nhắn riêng tư cần được nâng niu.',
   icons: {
     icon: [
       { url: '/icon.svg?v=inkwell-2', type: 'image/svg+xml' },

@@ -12,9 +12,9 @@ export const LandingPlacard: React.FC = () => {
 
   const copy = {
     vi: {
-      frontTitle: 'Xưởng thư tín kỹ thuật số',
+      frontTitle: 'Góc thư tín trên không gian số.',
       frontDesc:
-        'Giấy mộc ép cạnh, nét mực sumi lắng đọng và con dấu sáp chữ I intaglio cho những dòng thư riêng tư.',
+        'Nơi có giấy mộc ép cạnh, nét mực sumi lắng đọng và con dấu sáp khắc chìm — dành cho những lời nhắn riêng tư cần được nâng niu.',
       frontCta: 'Bắt đầu viết thư',
       frontOpen: 'Mở lá thư mẫu',
       openedTitle: 'Con dấu sáp đã mở',

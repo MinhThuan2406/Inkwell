@@ -16,7 +16,16 @@ console.log('🛡️ Starting Inkwell Comprehensive Codebase Security Audit (Loc
 
 // 1. Audit Remote vs Local file tracking (Confidentiality & Privacy)
 console.log('📌 Section 1: Local vs Remote Exposure Audit');
-const sensitiveUntracked = ['.env', '.env.local', '.data', 'AGENTS.md', 'REDESIGN_PLAN.md'];
+const sensitiveUntracked = [
+  '.env',
+  '.env.local',
+  '.data',
+  'AGENTS.md',
+  'REDESIGN_PLAN.md',
+  '.agent',
+  'rules',
+  '.env.example',
+];
 for (const item of sensitiveUntracked) {
   const localExists = fs.existsSync(item);
   let trackedInGit = false;

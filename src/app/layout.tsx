@@ -4,7 +4,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Inkwell | Gói ghém thư tay vào một đường link',
   description:
-    'Góc thư tín trên không gian số. Nơi có giấy mộc ép cạnh, nét mực sumi lắng đọng và con dấu sáp khắc chìm — dành cho những lời nhắn riêng tư cần được nâng niu.',
+    'Góc thư tín trên không gian số. Nơi có giấy mộc ép cạnh, nét mực sumi lắng đọng và con dấu sáp khắc chìm, dành cho những lời nhắn riêng tư cần được nâng niu.',
   icons: {
     icon: [
       { url: '/icon.svg?v=inkwell-2', type: 'image/svg+xml' },

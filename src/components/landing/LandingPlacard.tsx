@@ -14,7 +14,7 @@ export const LandingPlacard: React.FC = () => {
     vi: {
       frontTitle: 'Góc thư tín trên không gian số.',
       frontDesc:
-        'Nơi có giấy mộc ép cạnh, nét mực sumi lắng đọng và con dấu sáp khắc chìm — dành cho những lời nhắn riêng tư cần được nâng niu.',
+        'Nơi có giấy mộc ép cạnh, nét mực sumi lắng đọng và con dấu sáp khắc chìm, dành cho những lời nhắn riêng tư cần được nâng niu.',
       frontCta: 'Bắt đầu viết thư',
       frontOpen: 'Mở lá thư mẫu',
       openedTitle: 'Con dấu sáp đã mở',
